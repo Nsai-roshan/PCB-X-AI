@@ -1,0 +1,42 @@
+# Build outputs
+core/build/
+frontend/node_modules/
+frontend/dist/
+
+# Python
+backend/.pytest_cache/
+backend/app/__pycache__/
+backend/app/services/__pycache__/
+backend/tests/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets — never commit these
+.env
+.env.local
+.env.*.local
+backend/.env
+*.key
+*.pem
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude session files (local only)
+tasks/todo.md
+tasks/lessons.md

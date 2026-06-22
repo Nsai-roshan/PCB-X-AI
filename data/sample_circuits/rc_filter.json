@@ -1,0 +1,31 @@
+{
+  "board": { "width": 30, "height": 18 },
+  "components": [
+    {
+      "id": "V1", "kind": "battery", "width": 3, "height": 2,
+      "pins": [{ "id": "POS", "x": 2, "y": 1 }, { "id": "NEG", "x": 0, "y": 1 }]
+    },
+    {
+      "id": "R1", "kind": "resistor", "width": 3, "height": 1,
+      "pins": [{ "id": "A", "x": 0, "y": 0 }, { "id": "B", "x": 2, "y": 0 }]
+    },
+    {
+      "id": "R2", "kind": "resistor", "width": 3, "height": 1,
+      "pins": [{ "id": "A", "x": 0, "y": 0 }, { "id": "B", "x": 2, "y": 0 }]
+    },
+    {
+      "id": "C1", "kind": "capacitor", "width": 2, "height": 2,
+      "pins": [{ "id": "POS", "x": 0, "y": 0 }, { "id": "NEG", "x": 1, "y": 1 }]
+    },
+    {
+      "id": "C2", "kind": "capacitor", "width": 2, "height": 2,
+      "pins": [{ "id": "POS", "x": 0, "y": 0 }, { "id": "NEG", "x": 1, "y": 1 }]
+    }
+  ],
+  "nets": [
+    { "id": "VCC", "connections": [{ "component": "V1", "pin": "POS" }, { "component": "R1", "pin": "A" }] },
+    { "id": "MID1", "connections": [{ "component": "R1", "pin": "B" }, { "component": "C1", "pin": "POS" }, { "component": "R2", "pin": "A" }] },
+    { "id": "MID2", "connections": [{ "component": "R2", "pin": "B" }, { "component": "C2", "pin": "POS" }] },
+    { "id": "GND", "connections": [{ "component": "C1", "pin": "NEG" }, { "component": "C2", "pin": "NEG" }, { "component": "V1", "pin": "NEG" }] }
+  ]
+}

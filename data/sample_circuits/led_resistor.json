@@ -1,0 +1,40 @@
+{
+  "board": { "width": 24, "height": 14 },
+  "components": [
+    {
+      "id": "BAT1",
+      "kind": "battery",
+      "width": 3,
+      "height": 2,
+      "pins": [
+        { "id": "POS", "x": 2, "y": 1 },
+        { "id": "NEG", "x": 0, "y": 1 }
+      ]
+    },
+    {
+      "id": "R1",
+      "kind": "resistor",
+      "width": 3,
+      "height": 1,
+      "pins": [
+        { "id": "A", "x": 0, "y": 0 },
+        { "id": "B", "x": 2, "y": 0 }
+      ]
+    },
+    {
+      "id": "LED1",
+      "kind": "led",
+      "width": 2,
+      "height": 1,
+      "pins": [
+        { "id": "ANODE", "x": 0, "y": 0 },
+        { "id": "CATHODE", "x": 1, "y": 0 }
+      ]
+    }
+  ],
+  "nets": [
+    { "id": "VCC", "connections": [{ "component": "BAT1", "pin": "POS" }, { "component": "R1", "pin": "A" }] },
+    { "id": "SIG", "connections": [{ "component": "R1", "pin": "B" }, { "component": "LED1", "pin": "ANODE" }] },
+    { "id": "GND", "connections": [{ "component": "LED1", "pin": "CATHODE" }, { "component": "BAT1", "pin": "NEG" }] }
+  ]
+}
